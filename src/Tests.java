@@ -8,8 +8,8 @@ public class Tests {
 	StringCalculator calculator = new StringCalculator();
 	@Test
 	public void test() {
-		result = calculator.Add("");
-		assertEquals(0, result);
+		result = calculator.Add("1,2");
+		assertEquals(3, result);
 	}
 
 }

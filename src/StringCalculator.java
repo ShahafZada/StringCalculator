@@ -7,6 +7,8 @@ public class StringCalculator {
 			return 0;
 		int first = locateNumber(numbers);
 		int firstLength = String.valueOf(first).length();
+		if(firstLength+1 > numbers.length())
+			return first;
 		int second = locateNumber(numbers.substring(firstLength+1));
 		return first + second;
 		
