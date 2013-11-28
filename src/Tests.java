@@ -39,7 +39,7 @@ public class Tests {
 	@Test
 	public void testNegativeNumbers() {
 		result = calculator.Add("-1,-2");
-		assertEquals(-3, result);
+		assertEquals(-2, result);
 	}
 
 }
