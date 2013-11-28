@@ -30,5 +30,16 @@ public class Tests {
 		assertEquals(120, result);
 	}
 	
+	@Test
+	public void testAllKindOfDelimeters() {
+		result = calculator.Add(";\n1;2");
+		assertEquals(3, result);
+	}
+	
+	@Test
+	public void testNegativeNumbers() {
+		result = calculator.Add("-1,-2");
+		assertEquals(-3, result);
+	}
 
 }
