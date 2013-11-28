@@ -6,14 +6,15 @@ public class StringCalculator {
 		if(numbers.equals(""))
 			return 0;
 		
-		int result = 0, nextNumber = 0, firstLength = 0, indexInText = 0;			
+		int result = 0, nextNumber = 0, indexInText = 0;			
 		result = locateNumber(numbers);
-		indexInText = String.valueOf(result).length() + 1;
+		indexInText = String.valueOf(result).length();
 		while(indexInText < numbers.length())
 		{							
-			nextNumber = locateNumber(numbers.substring(firstLength+1));
+			
+			nextNumber = locateNumber(numbers.substring(indexInText));
 			result += nextNumber;					
-			indexInText += String.valueOf(nextNumber).length() + 1;
+			indexInText += String.valueOf(nextNumber).length();
 		}
 		return result;
 	}
