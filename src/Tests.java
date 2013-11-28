@@ -41,5 +41,11 @@ public class Tests {
 		result = calculator.Add("-1,-2");
 		assertEquals(-3, result);
 	}
+	
+	@Test
+	public void testMultipleNegativeNumbers() {
+		result = calculator.Add("-1,-2,3,4,5,-6-2,1.18.2-9");
+		assertEquals(13, result);
+	}
 
 }
