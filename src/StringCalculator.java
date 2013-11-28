@@ -5,13 +5,17 @@ public class StringCalculator {
 	{
 		if(numbers.equals(""))
 			return 0;
-		int first = locateNumber(numbers);
-		int firstLength = String.valueOf(first).length();
-		if(firstLength+1 > numbers.length())
-			return first;
-		int second = locateNumber(numbers.substring(firstLength+1));
-		return first + second;
 		
+		int result = 0, nextNumber = 0, firstLength = 0, indexInText = 0;			
+		result = locateNumber(numbers);
+		indexInText = String.valueOf(result).length() + 1;
+		while(indexInText < numbers.length())
+		{							
+			nextNumber = locateNumber(numbers.substring(firstLength+1));
+			result += nextNumber;					
+			indexInText += String.valueOf(nextNumber).length() + 1;
+		}
+		return result;
 	}
 	private int locateNumber(String expression)
 	{
